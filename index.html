@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incredible India Travel - Explore Hidden Gems</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-umbrella-beach"></i> Incredible India Travel
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li id="authLinks">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="register.html" class="btn-register">Register</a>
+                </li>
+                <li id="userLinks" style="display:none;">
+                    <span id="userName" class="user-name"></span>
+                    <a href="#" id="logoutBtn" class="btn-logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Hidden Gems of India</h1>
+            <p>Explore 30 incredible destinations with their secret places, live weather, and custom packages</p>
+            <div class="search-box">
+                <input type="text" id="heroSearch" placeholder="Search destinations...">
+                <button onclick="searchFromHero()"><i class="fas fa-search"></i> Search</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span>30+</span><p>Destinations</p></div>
+                <div class="stat"><span>60+</span><p>Packages</p></div>
+                <div class="stat"><span>100+</span><p>Hidden Places</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Hidden Places</h3>
+                <p>Discover secret spots beyond typical tourist routes</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-cloud-sun"></i>
+                <h3>Live Weather</h3>
+                <p>Current and 5-day forecast for every destination</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-users"></i>
+                <h3>Custom Packages</h3>
+                <p>Packages tailored to group size and preferences</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Live Location</h3>
+                <p>Google Maps integration with real-time tracking</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular">
+        <h2>Popular Destinations</h2>
+        <div class="destinations-grid" id="popularDestinations"></div>
+        <div class="view-all">
+            <a href="destinations.html" class="btn-primary">View All Destinations <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Incredible India Travel</h3>
+                <p>Your gateway to discovering the hidden treasures of India</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="destinations.html">Destinations</a>
+                <a href="packages.html">Packages</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> info@incredibleindia.com</p>
+                <p><i class="fas fa-phone"></i> +91 9876543210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Incredible India Travel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPopularDestinations();
+        });
+    </script>
+</body>
+</html>

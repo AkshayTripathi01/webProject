@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Details - Incredible India Travel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-umbrella-beach"></i> Incredible India Travel
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li id="authLinks">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="register.html" class="btn-register">Register</a>
+                </li>
+                <li id="userLinks" style="display:none;">
+                    <span id="userName" class="user-name"></span>
+                    <a href="#" id="logoutBtn" class="btn-logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="destinationDetail"></div>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>Book Package</h2>
+            <div id="bookingMessage" class="message"></div>
+            <form id="bookingForm">
+                <input type="hidden" id="bookPackageId">
+                <div class="form-group">
+                    <label>Package</label>
+                    <input type="text" id="bookPackageName" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Number of Persons</label>
+                    <input type="number" id="bookNumPersons" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Travel Date</label>
+                    <input type="date" id="bookTravelDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Total Price (₹)</label>
+                    <input type="text" id="bookTotalPrice" readonly>
+                </div>
+                <button type="submit" class="btn-primary btn-full">
+                    <i class="fas fa-check"></i> Confirm Booking
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Incredible India Travel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/weather.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const destId = params.get('id');
+            if (destId) {
+                loadDestinationDetail(destId);
+            } else {
+                window.location.href = 'destinations.html';
+            }
+        });
+    </script>
+</body>
+</html>

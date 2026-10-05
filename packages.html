@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Packages - Incredible India Travel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-umbrella-beach"></i> Incredible India Travel
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <li id="authLinks">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="register.html" class="btn-register">Register</a>
+                </li>
+                <li id="userLinks" style="display:none;">
+                    <span id="userName" class="user-name"></span>
+                    <a href="#" id="logoutBtn" class="btn-logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Travel Packages for Every Group Size</h1>
+        <div class="search-filter">
+            <input type="text" id="packageSearch" placeholder="Search packages...">
+            <button onclick="filterPackages()"><i class="fas fa-search"></i> Search</button>
+        </div>
+    </div>
+
+    <div class="packages-grid" id="allPackages"></div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Incredible India Travel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllPackages();
+        });
+    </script>
+</body>
+</html>
